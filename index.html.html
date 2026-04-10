@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Talent Bridge – Simplified Mobility | Visa & Inscription Europe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B2E6B;
+  --navy-dark:#0F1E4A;
+  --green:#3A7D3A;
+  --green-light:#5BAD5B;
+  --gold:#C9A227;
+  --gray-50:#F8F9FF;
+  --gray-100:#EEF2FF;
+  --gray-200:#DDE3F5;
+  --gray-400:#9CA3AF;
+  --gray-600:#4B5563;
+  --gray-800:#1F2937;
+  --white:#FFFFFF;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--gray-800);background:#fff;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--gray-200);padding:0 5%}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:70px}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-img{width:46px;height:46px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center}
+.nav-logo-img svg{width:30px;height:30px}
+.nav-logo-text .name{font-size:17px;font-weight:700;color:var(--navy);letter-spacing:-0.3px}
+.nav-logo-text .tag{font-size:9px;font-weight:400;color:var(--green);letter-spacing:2px;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:13px;font-weight:500;color:var(--gray-600);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{background:var(--navy);color:#fff;font-size:13px;font-weight:600;padding:10px 22px;border-radius:8px;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--navy-dark)}
+
+/* HERO */
+.hero{padding:140px 5% 80px;background:linear-gradient(160deg,var(--navy-dark) 0%,var(--navy) 60%,#2A4A8A 100%);position:relative;overflow:hidden}
+.hero-bg-arc{position:absolute;top:-100px;right:-150px;width:700px;height:700px;border:1px solid rgba(255,255,255,0.05);border-radius:50%}
+.hero-bg-arc2{position:absolute;top:-50px;right:-100px;width:500px;height:500px;border:1px solid rgba(255,255,255,0.05);border-radius:50%}
+.hero-bg-dots{position:absolute;bottom:0;left:0;right:0;height:200px;background:radial-gradient(circle at 20% 80%, rgba(58,125,58,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(201,162,39,0.1) 0%, transparent 50%)}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;color:var(--green-light);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+.hero-eyebrow span{width:28px;height:1px;background:var(--green-light)}
+.hero h1{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:#fff;line-height:1.1;margin-bottom:20px}
+.hero h1 em{font-style:italic;color:#7EBFFF}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.65);line-height:1.7;font-weight:300;margin-bottom:36px;max-width:480px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:var(--green);color:#fff;font-size:14px;font-weight:600;padding:14px 28px;border-radius:10px;text-decoration:none;transition:background .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:var(--green-light)}
+.btn-secondary{background:rgba(255,255,255,0.1);color:#fff;font-size:14px;font-weight:500;padding:14px 28px;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,0.25);transition:background .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-secondary:hover{background:rgba(255,255,255,0.18)}
+.hero-stats{display:flex;gap:32px;margin-top:44px;padding-top:44px;border-top:1px solid rgba(255,255,255,0.12)}
+.stat{text-align:left}
+.stat-n{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#fff;line-height:1}
+.stat-l{font-size:11px;color:rgba(255,255,255,0.5);margin-top:4px;text-transform:uppercase;letter-spacing:1px}
+
+/* HERO RIGHT CARD */
+.hero-card{background:rgba(255,255,255,0.08);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:28px}
+.hc-title{font-size:11px;font-weight:600;color:rgba(255,255,255,0.5);letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+.hc-visas{display:flex;flex-direction:column;gap:12px}
+.hc-visa{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:background .2s}
+.hc-visa:hover{background:rgba(255,255,255,0.12)}
+.hc-visa.active{background:rgba(90,160,255,0.15);border-color:rgba(90,160,255,0.4)}
+.hv-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hv-icon.blue{background:rgba(27,46,107,0.5)}
+.hv-icon.green{background:rgba(58,125,58,0.4)}
+.hv-icon.gold{background:rgba(201,162,39,0.3)}
+.hv-info{flex:1}
+.hv-name{font-size:13px;font-weight:600;color:#fff}
+.hv-detail{font-size:11px;color:rgba(255,255,255,0.45);margin-top:1px}
+.hv-badge{font-size:10px;font-weight:600;padding:3px 10px;border-radius:20px}
+.badge-blue{background:rgba(90,160,255,0.2);color:#7EBFFF}
+.badge-green{background:rgba(58,125,58,0.3);color:#6FCF6F}
+.badge-gold{background:rgba(201,162,39,0.2);color:#F0C840}
+.hc-footer{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;gap:10px}
+.hc-footer svg{width:16px;height:16px;flex-shrink:0;opacity:0.5}
+.hc-footer span{font-size:12px;color:rgba(255,255,255,0.5)}
+.hc-footer strong{color:rgba(255,255,255,0.8);font-weight:600}
+
+/* SECTION BASE */
+section{padding:90px 5%}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-tag{font-size:11px;font-weight:600;color:var(--green);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.section-tag span{width:24px;height:1px;background:var(--green)}
+.section-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:16px}
+.section-sub{font-size:15px;color:var(--gray-600);line-height:1.7;max-width:580px}
+
+/* SERVICES */
+.services-bg{background:var(--gray-50)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.service-card{background:#fff;border:1px solid var(--gray-200);border-radius:16px;padding:28px;transition:box-shadow .3s,border-color .3s;cursor:default}
+.service-card:hover{box-shadow:0 8px 40px rgba(27,46,107,0.1);border-color:var(--navy)}
+.sc-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.sc-icon.navy{background:var(--gray-100)}
+.sc-icon.green{background:#F0FDF4}
+.sc-icon.gold{background:#FFFBEB}
+.sc-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.sc-desc{font-size:13px;color:var(--gray-600);line-height:1.65}
+.sc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.sc-tag{font-size:10px;font-weight:500;padding:3px 10px;border-radius:20px;background:var(--gray-100);color:var(--navy)}
+
+/* PROCESS */
+.process-steps{display:flex;flex-direction:column;gap:0;margin-top:52px;position:relative}
+.process-steps::before{content:'';position:absolute;left:27px;top:56px;bottom:56px;width:2px;background:linear-gradient(to bottom,var(--navy),var(--green));opacity:0.2}
+.ps{display:flex;gap:28px;align-items:flex-start;padding:28px 0}
+.ps+.ps{border-top:1px solid var(--gray-200)}
+.ps-num{width:54px;height:54px;border-radius:50%;background:var(--navy);color:#fff;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Playfair Display',serif}
+.ps-body{}
+.ps-title{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.ps-desc{font-size:14px;color:var(--gray-600);line-height:1.65}
+.ps-time{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green);margin-top:10px;background:#F0FDF4;padding:3px 10px;border-radius:20px}
+
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:60px}
+.why-img{border-radius:20px;overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,#2A4A8A 100%);min-height:420px;display:flex;align-items:center;justify-content:center;position:relative}
+.why-img-inner{text-align:center;padding:40px}
+.why-img-title{font-family:'Playfair Display',serif;font-size:32px;color:#fff;font-style:italic;margin-bottom:8px}
+.why-img-sub{font-size:12px;color:rgba(255,255,255,0.5);letter-spacing:2px;text-transform:uppercase}
+.why-badges{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:30px}
+.why-badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:12px;text-align:center}
+.wb-n{font-size:22px;font-weight:700;color:#fff;font-family:'Playfair Display',serif}
+.wb-l{font-size:10px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+.why-points{display:flex;flex-direction:column;gap:20px}
+.wp{display:flex;gap:16px;align-items:flex-start}
+.wp-icon{width:44px;height:44px;border-radius:12px;background:var(--gray-100);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wp-title{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.wp-desc{font-size:13px;color:var(--gray-600);line-height:1.6}
+
+/* VISA TYPES */
+.visa-bg{background:var(--navy-dark)}
+.visa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.vc{border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,0.1);position:relative;overflow:hidden;background:rgba(255,255,255,0.04);transition:background .3s}
+.vc:hover{background:rgba(255,255,255,0.08)}
+.vc-accent{position:absolute;top:0;left:0;right:0;height:3px}
+.vc-accent.blue{background:var(--navy)}
+.vc-accent.green{background:var(--green)}
+.vc-accent.gold{background:var(--gold)}
+.vc-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.vc-icon.blue{background:rgba(27,46,107,0.5)}
+.vc-icon.green{background:rgba(58,125,58,0.35)}
+.vc-icon.gold{background:rgba(201,162,39,0.25)}
+.vc-title{font-size:20px;font-weight:700;color:#fff;margin-bottom:8px;font-family:'Playfair Display',serif}
+.vc-desc{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.65;margin-bottom:20px}
+.vc-items{list-style:none;display:flex;flex-direction:column;gap:8px}
+.vc-items li{font-size:12px;color:rgba(255,255,255,0.65);display:flex;align-items:flex-start;gap:8px}
+.vc-items li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green-light);flex-shrink:0;margin-top:5px}
+.vc-cta{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#7EBFFF;margin-top:20px;text-decoration:none;transition:gap .2s}
+.vc-cta:hover{gap:10px}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.tc{background:#fff;border:1px solid var(--gray-200);border-radius:16px;padding:28px}
+.tc-stars{display:flex;gap:3px;margin-bottom:16px}
+.tc-star{width:14px;height:14px;color:var(--gold)}
+.tc-text{font-size:14px;color:var(--gray-600);line-height:1.7;font-style:italic;margin-bottom:20px}
+.tc-author{display:flex;align-items:center;gap:12px}
+.tc-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0}
+.tc-av.a{background:var(--navy)}
+.tc-av.b{background:var(--green)}
+.tc-av.c{background:var(--gold)}
+.tc-name{font-size:14px;font-weight:600;color:var(--navy)}
+.tc-role{font-size:11px;color:var(--gray-400)}
+
+/* CONTACT */
+.contact-bg{background:var(--gray-50)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:52px;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:20px}
+.ci{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--gray-200);border-radius:14px;padding:20px}
+.ci-icon{width:44px;height:44px;background:var(--gray-100);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ci-label{font-size:11px;color:var(--gray-400);text-transform:uppercase;letter-spacing:1px;font-weight:500;margin-bottom:4px}
+.ci-val{font-size:14px;font-weight:600;color:var(--navy)}
+.ci-val a{color:var(--navy);text-decoration:none}
+.ci-val a:hover{color:var(--green)}
+.contact-form{background:#fff;border:1px solid var(--gray-200);border-radius:20px;padding:32px}
+.form-title{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.form-sub{font-size:13px;color:var(--gray-400);margin-bottom:24px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.form-group label{font-size:12px;font-weight:600;color:var(--navy)}
+.form-group input,.form-group select,.form-group textarea{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--gray-800);background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:10px 14px;outline:none;transition:border .2s;width:100%}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--navy)}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-submit{background:var(--navy);color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;padding:13px 28px;border-radius:10px;border:none;cursor:pointer;transition:background .2s;width:100%}
+.form-submit:hover{background:var(--navy-dark)}
+
+/* FOOTER */
+footer{background:var(--navy-dark);padding:60px 5% 30px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.footer-brand .name{font-size:20px;font-weight:700;color:#fff;margin-bottom:4px}
+.footer-brand .tagline{font-size:10px;color:var(--green-light);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.7;max-width:260px}
+.footer-col h4{font-size:11px;font-weight:700;color:rgba(255,255,255,0.5);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.55);text-decoration:none;margin-bottom:10px;transition:color .2s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:24px}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.35)}
+.footer-socials{display:flex;gap:12px}
+.fs-icon{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;transition:background .2s;cursor:pointer}
+.fs-icon:hover{background:rgba(255,255,255,0.15)}
+
+/* ACCENT BAR */
+.accent-line{height:4px;background:linear-gradient(90deg,var(--green) 0%,var(--navy) 50%,var(--gold) 100%)}
+
+@media(max-width:900px){
+  .hero-inner,.services-grid,.visa-grid,.testi-grid,.why-grid,.contact-grid,.footer-top{grid-template-columns:1fr}
+  .hero h1{font-size:36px}
+  .form-row{grid-template-columns:1fr}
+  .hero-stats{flex-wrap:wrap;gap:20px}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-img">
+        <svg viewBox="0 0 30 30" fill="none">
+          <rect x="3" y="7" width="24" height="3" rx="1.5" fill="white"/>
+          <rect x="7" y="13" width="16" height="3" rx="1.5" fill="white"/>
+          <rect x="11" y="19" width="8" height="3" rx="1.5" fill="rgba(255,255,255,0.5)"/>
+          <circle cx="26" cy="7" r="3" fill="#C9A227"/>
+        </svg>
+      </div>
+      <div class="nav-logo-text">
+        <div class="name">Talent Bridge</div>
+        <div class="tag">Simplified Mobility</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#process">Processus</a>
+      <a href="#visas">Visas</a>
+      <a href="#temoignages">Témoignages</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Démarrer maintenant</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="accueil">
+  <div class="hero-bg-arc"></div>
+  <div class="hero-bg-arc2"></div>
+  <div class="hero-bg-dots"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow"><span></span>Votre passeport vers l'Europe</div>
+      <h1>Visa, Études &amp;<br><em>Mobilité</em><br>Internationale</h1>
+      <p class="hero-sub">Talent Bridge vous accompagne dans toutes vos démarches — visa étudiant, travail ou touriste — pour réaliser vos projets en Europe depuis le Cameroun.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          Consulter gratuitement
+        </a>
+        <a href="#services" class="btn-secondary">
+          Nos services
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-n">500+</div><div class="stat-l">Dossiers traités</div></div>
+        <div class="stat"><div class="stat-n">95%</div><div class="stat-l">Taux d'obtention</div></div>
+        <div class="stat"><div class="stat-n">3</div><div class="stat-l">Types de visas</div></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hc-title">Nos visas Europe</div>
+      <div class="hc-visas">
+        <div class="hc-visa active">
+          <div class="hv-icon blue">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7EBFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div class="hv-info">
+            <div class="hv-name">Visa Étudiant</div>
+            <div class="hv-detail">Campus France · Licence · Master</div>
+          </div>
+          <span class="hv-badge badge-blue">Études</span>
+        </div>
+        <div class="hc-visa">
+          <div class="hv-icon green">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6FCF6F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <div class="hv-info">
+            <div class="hv-name">Visa Travail</div>
+            <div class="hv-detail">Salarié · Entrepreneur · Talent</div>
+          </div>
+          <span class="hv-badge badge-green">Travail</span>
+        </div>
+        <div class="hc-visa">
+          <div class="hv-icon gold">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F0C840" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="hv-info">
+            <div class="hv-name">Visa Touriste</div>
+            <div class="hv-detail">Schengen · Court séjour</div>
+          </div>
+          <span class="hv-badge badge-gold">Tourisme</span>
+        </div>
+      </div>
+      <div class="hc-footer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l1.02-.93a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>Appelez-nous : <strong>+237 676 445 232</strong></span>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="accent-line"></div>
+
+<!-- SERVICES -->
+<section class="services-bg" id="services">
+  <div class="section-inner">
+    <div class="section-tag"><span></span>Ce que nous faisons</div>
+    <h2 class="section-title">Nos services d'accompagnement</h2>
+    <p class="section-sub">De la constitution du dossier à l'installation en Europe, nous vous guidons à chaque étape de votre parcours.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="sc-icon navy">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1B2E6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="sc-title">Demande de Visa</div>
+        <div class="sc-desc">Constitution et dépôt de votre dossier visa pour l'Europe. Nous préparons chaque pièce justificative pour maximiser vos chances d'acceptation.</div>
+        <div class="sc-tags">
+          <span class="sc-tag">Étudiant</span>
+          <span class="sc-tag">Travail</span>
+          <span class="sc-tag">Touriste</span>
+          <span class="sc-tag">Schengen</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="sc-icon green">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3A7D3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="sc-title">Inscription Universitaire</div>
+        <div class="sc-desc">Orientation académique personnalisée et accompagnement à l'inscription dans les universités françaises et européennes selon votre profil.</div>
+        <div class="sc-tags">
+          <span class="sc-tag">Campus France</span>
+          <span class="sc-tag">Licence</span>
+          <span class="sc-tag">Master</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="sc-icon gold">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <div class="sc-title">Coaching Professionnel</div>
+        <div class="sc-desc">Préparation de votre projet professionnel, rédaction de CV, lettres de motivation et préparation aux entretiens pour le marché européen.</div>
+        <div class="sc-tags">
+          <span class="sc-tag">CV</span>
+          <span class="sc-tag">Lettre de motivation</span>
+          <span class="sc-tag">Entretien</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="sc-icon navy">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1B2E6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="sc-title">Procédure Campus France</div>
+        <div class="sc-desc">Assistance complète pour la procédure Campus France : création de compte, constitution du dossier, entretien et suivi jusqu'à l'acceptation.</div>
+        <div class="sc-tags">
+          <span class="sc-tag">DAP</span>
+          <span class="sc-tag">Dossier blanc</span>
+          <span class="sc-tag">Entretien</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="sc-icon green">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3A7D3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="sc-title">Aide à l'installation</div>
+        <div class="sc-desc">Accompagnement pour votre installation en Europe : recherche de logement, ouverture de compte bancaire, titre de séjour et vie pratique.</div>
+        <div class="sc-tags">
+          <span class="sc-tag">Logement</span>
+          <span class="sc-tag">Titre de séjour</span>
+          <span class="sc-tag">Banque</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="sc-icon gold">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="sc-title">Suivi Personnalisé</div>
+        <div class="sc-desc">Un conseiller dédié vous suit de la première consultation jusqu'à votre installation, disponible pour répondre à toutes vos questions.</div>
+        <div class="sc-tags">
+          <span class="sc-tag">Conseiller dédié</span>
+          <span class="sc-tag">WhatsApp</span>
+          <span class="sc-tag">Suivi 360°</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start">
+      <div>
+        <div class="section-tag"><span></span>Comment ça marche</div>
+        <h2 class="section-title">Un processus simple et transparent</h2>
+        <p class="section-sub">Nous avons simplifié chaque étape pour vous garantir la meilleure expérience et maximiser vos chances de succès.</p>
+      </div>
+      <div></div>
+    </div>
+    <div class="process-steps">
+      <div class="ps">
+        <div class="ps-num">1</div>
+        <div class="ps-body">
+          <div class="ps-title">Consultation initiale gratuite</div>
+          <div class="ps-desc">Nous analysons votre profil, vos objectifs et votre situation pour vous proposer la meilleure stratégie de dossier adaptée à votre projet.</div>
+          <div class="ps-time">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            30 minutes · Gratuit
+          </div>
+        </div>
+      </div>
+      <div class="ps">
+        <div class="ps-num">2</div>
+        <div class="ps-body">
+          <div class="ps-title">Constitution du dossier</div>
+          <div class="ps-desc">Nous vous guidons dans la collecte de toutes les pièces justificatives nécessaires et nous rédigeons les documents d'accompagnement (lettre de motivation, plan de financement, etc.).</div>
+          <div class="ps-time">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            1 à 2 semaines
+          </div>
+        </div>
+      </div>
+      <div class="ps">
+        <div class="ps-num">3</div>
+        <div class="ps-body">
+          <div class="ps-title">Dépôt et suivi de la demande</div>
+          <div class="ps-desc">Nous déposons votre dossier auprès des autorités compétentes et effectuons le suivi régulier de votre demande pour vous tenir informé en temps réel.</div>
+          <div class="ps-time">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            2 à 8 semaines selon le visa
+          </div>
+        </div>
+      </div>
+      <div class="ps">
+        <div class="ps-num">4</div>
+        <div class="ps-body">
+          <div class="ps-title">Obtention du visa &amp; départ</div>
+          <div class="ps-desc">À l'obtention de votre visa, nous vous préparons pour votre départ : conseils pratiques, contacts utiles et accompagnement pour votre installation en Europe.</div>
+          <div class="ps-time">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Votre projet se réalise !
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISA TYPES -->
+<section class="visa-bg" id="visas">
+  <div class="section-inner">
+    <div class="section-tag" style="color:rgba(255,255,255,0.5)"><span style="background:rgba(255,255,255,0.3)"></span>Nos spécialités</div>
+    <h2 class="section-title" style="color:#fff">Types de visa que nous traitons</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.5)">Chaque type de visa a ses spécificités. Notre expertise couvre l'ensemble des procédures pour l'espace européen et Schengen.</p>
+    <div class="visa-grid">
+      <div class="vc">
+        <div class="vc-accent blue"></div>
+        <div class="vc-icon blue">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7EBFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="vc-title">Visa Étudiant</div>
+        <div class="vc-desc">Pour poursuivre vos études en France et en Europe. Nous gérons toute la procédure Campus France de A à Z.</div>
+        <ul class="vc-items">
+          <li>Procédure Campus France (DAP)</li>
+          <li>Inscription Licence, Master, Doctorat</li>
+          <li>Visa long séjour VLS-TS étudiant</li>
+          <li>Aide au logement CROUS</li>
+          <li>Bourse d'études et exonérations</li>
+        </ul>
+        <a href="#contact" class="vc-cta">Démarrer mon dossier <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="vc">
+        <div class="vc-accent green"></div>
+        <div class="vc-icon green">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6FCF6F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <div class="vc-title">Visa Travail</div>
+        <div class="vc-desc">Pour exercer une activité professionnelle en Europe — salarié, entrepreneur ou talent international.</div>
+        <ul class="vc-items">
+          <li>Visa salarié / contrat de travail</li>
+          <li>Passeport Talent (compétences &amp; métiers)</li>
+          <li>Visa entrepreneur / créateur d'entreprise</li>
+          <li>Recherche d'emploi post-diplôme</li>
+          <li>Changement de statut visa étudiant→travail</li>
+        </ul>
+        <a href="#contact" class="vc-cta">Démarrer mon dossier <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="vc">
+        <div class="vc-accent gold"></div>
+        <div class="vc-icon gold">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F0C840" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="vc-title">Visa Touriste</div>
+        <div class="vc-desc">Pour visiter la France, l'Europe et l'espace Schengen — courts séjours touristiques ou familiaux.</div>
+        <ul class="vc-items">
+          <li>Visa Schengen court séjour (90 jours)</li>
+          <li>Visite familiale ou amicale</li>
+          <li>Voyage d'affaires court terme</li>
+          <li>Visa transit aéroportuaire</li>
+          <li>Préparation du dossier d'invitation</li>
+        </ul>
+        <a href="#contact" class="vc-cta">Démarrer mon dossier <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="pourquoi">
+  <div class="section-inner">
+    <div class="section-tag"><span></span>Pourquoi nous choisir</div>
+    <h2 class="section-title">L'expertise au service<br>de votre projet</h2>
+    <div class="why-grid">
+      <div class="why-img">
+        <div class="why-img-inner">
+          <div class="why-img-title">Talent Bridge</div>
+          <div class="why-img-sub">Simplified Mobility</div>
+          <div class="why-badges">
+            <div class="why-badge"><div class="wb-n">95%</div><div class="wb-l">Taux succès</div></div>
+            <div class="why-badge"><div class="wb-n">500+</div><div class="wb-l">Clients</div></div>
+            <div class="why-badge"><div class="wb-n">3</div><div class="wb-l">Types visa</div></div>
+            <div class="why-badge"><div class="wb-n">360°</div><div class="wb-l">Accompagnement</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="why-points">
+        <div class="wp">
+          <div class="wp-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B2E6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div>
+            <div class="wp-title">Expertise vérifiée</div>
+            <div class="wp-desc">Notre équipe maîtrise parfaitement les procédures consulaires françaises et européennes, les exigences Campus France et les subtilités de chaque type de visa.</div>
+          </div>
+        </div>
+        <div class="wp">
+          <div class="wp-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B2E6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <div class="wp-title">Accompagnement personnalisé</div>
+            <div class="wp-desc">Un conseiller dédié vous est attribué dès votre inscription. Il reste disponible par téléphone, email ou WhatsApp tout au long de votre procédure.</div>
+          </div>
+        </div>
+        <div class="wp">
+          <div class="wp-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B2E6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="wp-title">Rapidité et efficacité</div>
+            <div class="wp-desc">Grâce à notre expérience, nous optimisons chaque dossier pour minimiser les délais et les risques de refus. Votre temps est précieux.</div>
+          </div>
+        </div>
+        <div class="wp">
+          <div class="wp-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B2E6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="wp-title">Transparence totale</div>
+            <div class="wp-desc">Pas de frais cachés. Nous vous informons à chaque étape de l'avancement de votre dossier et vous expliquons clairement toutes les démarches.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="services-bg" id="temoignages">
+  <div class="section-inner">
+    <div class="section-tag"><span></span>Ils nous font confiance</div>
+    <h2 class="section-title">Témoignages de nos clients</h2>
+    <p class="section-sub">Des centaines d'étudiants, professionnels et voyageurs ont réalisé leurs projets en Europe grâce à Talent Bridge.</p>
+    <div class="testi-grid">
+      <div class="tc">
+        <div class="tc-stars">
+          <svg class="tc-star" viewBox="0 0 24 24" fill="#C9A227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="tc-star" viewBox="0 0 24 24" fill="#C9A227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="tc-star" viewBox="0 0 24 24" fill="#C9A227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="tc-star" viewBox="0 0 24 24" fill="#C9A227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="tc-star" viewBox="0 0 24 24" fill="#C9A227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="tc-text">"Grâce à Talent Bridge, j'ai obtenu mon visa étudiant en 6 semaines. Mon conseiller m'a guidé à chaque étape, j'étais bien préparé pour l'entretien Campus France. Je recommande vivement !"</div>
+        <div class="tc-author">
+          <div class="tc-av a">KM</div>
+          <div>
+            <div class="tc-name">Kevin Mbarga</div>
+            <div class="tc-role">Étudiant en Master à Lyon</div>
+          </div>
+        </div>
+      </div>
+      <div class="tc">
+        <div class="tc-stars">
+          <svg class="tc-star" viewBox="0 0 24 24" fill="#C9A227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="tc-star" viewBox="0 0 24 24" fill="#C9A227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="tc-star" viewBox="0 0 24 24" fill="#C9A227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="tc-star" viewBox="0 0 24 24" fill="#C9A227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="tc-star" viewBox="0 0 24 24" fill="#C9A227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="tc-text">"Service impeccable pour mon visa travail. J'avais déjà eu un refus avant de venir chez eux. Ils ont revu mon dossier entièrement et j'ai obtenu mon visa à la deuxième tentative."</div>
+        <div class="tc-author">
+          <div class="tc-av b">FN</div>
+          <div>
+            <div class="tc-name">Francine Nguemo</div>
+            <div class="tc-role">Infirmière à Paris</div>
+          </div>
+        </div>
+      </div>
+      <div class="tc">
+        <div class="tc-stars">
+          <svg class="tc-star" viewBox="0 0 24 24" fill="#C9A227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="tc-star" viewBox="0 0 24 24" fill="#C9A227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="tc-star" viewBox="0 0 24 24" fill="#C9A227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="tc-star" viewBox="0 0 24 24" fill="#C9A227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="tc-star" viewBox="0 0 24 24" fill="#C9A227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="tc-text">"Visa touriste Schengen obtenu en 3 semaines pour visiter ma fille en France. Dossier parfaitement préparé, aucun document manquant. L'équipe est très professionnelle et réactive."</div>
+        <div class="tc-author">
+          <div class="tc-av c">MA</div>
+          <div>
+            <div class="tc-name">Marie Atanga</div>
+            <div class="tc-role">Commerçante à Yaoundé</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-bg" id="contact">
+  <div class="section-inner">
+    <div class="section-tag"><span></span>Contactez-nous</div>
+    <h2 class="section-title">Démarrons votre projet ensemble</h2>
+    <p class="section-sub">Remplissez le formulaire ou contactez-nous directement. Une première consultation est toujours gratuite.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="ci">
+          <div class="ci-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B2E6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l1.02-.93a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="ci-label">Téléphone</div>
+            <div class="ci-val"><a href="tel:+237676445232">+237 676 445 232</a></div>
+            <div class="ci-val"><a href="tel:+237655234383">+237 655 234 383</a></div>
+          </div>
+        </div>
+        <div class="ci">
+          <div class="ci-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B2E6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="ci-label">Email</div>
+            <div class="ci-val"><a href="mailto:info@talent-bridge.fr">info@talent-bridge.fr</a></div>
+          </div>
+        </div>
+        <div class="ci">
+          <div class="ci-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B2E6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div>
+            <div class="ci-label">Site web</div>
+            <div class="ci-val"><a href="https://talent-bridge.fr" target="_blank">talent-bridge.fr</a></div>
+          </div>
+        </div>
+        <div class="ci">
+          <div class="ci-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B2E6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="ci-label">Adresse</div>
+            <div class="ci-val">Yaoundé – Awae Escalier<br>En face de DOVV, Cameroun</div>
+          </div>
+        </div>
+        <div class="ci">
+          <div class="ci-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B2E6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="ci-label">Horaires</div>
+            <div class="ci-val">Lun – Ven : 8h00 – 18h00<br>Sam : 9h00 – 14h00</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="form-title">Demande de consultation</div>
+        <div class="form-sub">Réponse sous 24h ouvrées · Première consultation gratuite</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Prénom</label>
+            <input type="text" placeholder="Jean"/>
+          </div>
+          <div class="form-group">
+            <label>Nom</label>
+            <input type="text" placeholder="Dupont"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="jean.dupont@email.com"/>
+        </div>
+        <div class="form-group">
+          <label>Téléphone / WhatsApp</label>
+          <input type="tel" placeholder="+237 6XX XXX XXX"/>
+        </div>
+        <div class="form-group">
+          <label>Type de visa souhaité</label>
+          <select>
+            <option value="">Sélectionner...</option>
+            <option>Visa Étudiant (Campus France)</option>
+            <option>Visa Travail (salarié)</option>
+            <option>Visa Travail (entrepreneur)</option>
+            <option>Visa Touriste / Schengen</option>
+            <option>Autre demande</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Votre message</label>
+          <textarea placeholder="Décrivez votre projet et vos questions..."></textarea>
+        </div>
+        <button class="form-submit" onclick="alert('Merci ! Nous vous contacterons sous 24h.')">Envoyer ma demande</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="name">Talent Bridge</div>
+        <div class="tagline">Simplified Mobility</div>
+        <p>Votre partenaire de confiance pour toutes vos démarches de visa et d'orientation académique vers l'Europe depuis le Cameroun.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Visa Étudiant</a>
+        <a href="#services">Visa Travail</a>
+        <a href="#services">Visa Touriste</a>
+        <a href="#services">Campus France</a>
+        <a href="#services">Coaching Pro</a>
+      </div>
+      <div class="footer-col">
+        <h4>Informations</h4>
+        <a href="#process">Notre processus</a>
+        <a href="#pourquoi">Pourquoi nous</a>
+        <a href="#temoignages">Témoignages</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+237676445232">+237 676 445 232</a>
+        <a href="tel:+237655234383">+237 655 234 383</a>
+        <a href="mailto:info@talent-bridge.fr">info@talent-bridge.fr</a>
+        <a href="https://talent-bridge.fr" target="_blank">talent-bridge.fr</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Talent Bridge. Tous droits réservés.</div>
+      <div class="footer-socials">
+        <div class="fs-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </div>
+        <div class="fs-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+        <div class="fs-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    const t=document.querySelector(this.getAttribute('href'));
+    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+window.addEventListener('scroll',function(){
+  const nav=document.querySelector('nav');
+  if(window.scrollY>20) nav.style.boxShadow='0 2px 20px rgba(27,46,107,0.1)';
+  else nav.style.boxShadow='none';
+});
+</script>
+</body>
+</html>
