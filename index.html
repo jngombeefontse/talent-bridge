@@ -1607,9 +1607,6 @@ try {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 1000,
-      system: CHAT_SYSTEM,
       messages: chatHistory
     }),
     signal: controller.signal
@@ -1621,22 +1618,19 @@ try {
     throw new Error(`HTTP error ${response.status}`);
   }
 
-  let data;
-  try {
-    data = await response.json();
-  } catch {
-    throw new Error("Invalid JSON response");
-  }
+  const data = await response.json();
 
   const reply =
+    data?.choices?.[0]?.message?.content ??
     data?.content?.[0]?.text ??
-    "Je suis désolée, une erreur s'est produite. Veuillez nous contacter directement au +237 657 580 979.";
+    "Erreur de réponse du serveur.";
 
   chatHistory.push({ role: 'assistant', content: reply });
   appendMessage('bot', reply, replyTime);
 
 } catch (err) {
-  appendMessage('bot',
+  appendMessage(
+    'bot',
     err.name === 'AbortError'
       ? "La requête a pris trop de temps."
       : "Erreur de connexion. Contactez-nous : +237 657 580 979 / +33 7 53 70 41 29",
