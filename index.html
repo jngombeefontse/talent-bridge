@@ -1616,7 +1616,7 @@ async function sendChatMessage() {
   showTyping();
 
   try {
-    const response = await fetch('https://backend-4txf.onrender.com/v1/messages', {
+    const response = await fetch('https://backend-4txf.onrender.com/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
