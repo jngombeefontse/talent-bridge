@@ -46,7 +46,7 @@ app.get('/health', (req, res) => {
 // ─── ROUTE PRINCIPALE : Proxy vers l'API Anthropic ────────────
 app.post('/api/chat', async (req, res) => {
   const apiKey = process.env.ANTHROPIC_API_KEY;
-console.log("API KEY:", apiKey);
+
   if (!apiKey) {
     console.error('[ERROR] ANTHROPIC_API_KEY non définie dans .env');
     return res.status(500).json({ error: 'Clé API manquante côté serveur.' });
@@ -105,7 +105,7 @@ RÈGLES STRICTES :
         'anthropic-version':    '2023-06-01',
       },
       body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
+        model:      'claude-sonnet-4-5',
         max_tokens: 800,
         system:     SYSTEM_PROMPT,
         messages:   trimmedMessages,
